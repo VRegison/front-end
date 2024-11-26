@@ -233,7 +233,7 @@ async function login() {
         feedback.style.color = 'green';
       
           setTimeout(() => {
-            window.location.href = 'http://192.168.222.149/faculdade/front-end/pages/dashboard.html';
+            window.location.href = '../pages/dashboard.html';
           }, 2000);
        
   
