@@ -103,14 +103,12 @@ async function listarUsuarios() {
     });
 }
 async function cadastrarUsuario() {
-  // Exibindo o modal de cadastro com SweetAlert2
   const { value: formValues } = await Swal.fire({
     title: 'Cadastrar Novo Usuário',
     html:
       '<input id="nome" class="swal2-input" placeholder="Nome">' +
       '<input id="email" class="swal2-input" placeholder="Email" type="email">' +
       '<input id="senha" class="swal2-input" placeholder="Senha" type="password">' +
-      // Alterando o campo "função" para um <select> com opções
       '<select id="funcao" class="swal2-input">' +
         '<option value="Aluno">Aluno</option>' +
         '<option value="Admin">Admin</option>' +
@@ -122,20 +120,18 @@ async function cadastrarUsuario() {
         nome: document.getElementById('nome').value,
         email: document.getElementById('email').value,
         senha: document.getElementById('senha').value,
-        funcao: document.getElementById('funcao').value,  // Obtendo o valor do select
+        funcao: document.getElementById('funcao').value,  
       };
     }
   });
 
-  // Se o usuário preencher o formulário, fazemos a chamada para a API
   if (formValues) {
     try {
-      // Exemplo de chamada API com axios
       const response = await axios.post(`${urlApi}usuarios/salva`, {
         nome: formValues.nome,
         email: formValues.email,
-        funcao: formValues.funcao,  // Enviando o valor selecionado de função
-        cursos: [], // Enviando o curso selecionado (pode ser um array de cursos)
+        funcao: formValues.funcao,  
+        cursos: [], 
         senha: formValues.senha
       });
       console.log("🚀 ~ cadastrarUsuario ~ response:", response);
