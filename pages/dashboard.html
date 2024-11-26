@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Controle de Usuários</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../assets/style/dash.css">
+</head>
+<body>
+  <!-- Barra de navegação -->
+  <nav class="nav-bar">
+    <div class="logo">LOGO</div>
+    <div class="system-name">Sistema de Controle</div>
+  </nav>
+
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Controle de Usuários</h1>
+      <button onclick="cadastrarUsuario()" type="button" id="createUserButton">Criar Usuário</button>
+    </header>
+    <main class="dashboard-main">
+      <table id="userTable" class="display">
+        <thead>
+          <tr>
+            <th  width="5%">#</th>
+            <th  width="25%">Nome</th>
+            <th  width="20%">Email</th>
+            <th  width="10%">Curso</th>
+            <th  width="5%">Função</th>
+            <th  width="2%"></th>
+            <th  width="2%"></th>
+
+          </tr>
+        </thead>
+        <tbody id="linhas">
+        </tbody>
+      </table>
+    </main>
+
+  
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="../assets/scripts/controllers.js" defer></script>
+</body>
+</html>
