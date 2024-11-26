@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../assets/style/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <!-- Lado esquerdo -->
+    <div class="left-side">
+      <h1>Crie sua Conta!</h1>
+      <p>Cadastre-se para começar a aproveitar todos os recursos.</p>
+    </div>
+
+    <div class="right-side">
+      <div class="logo">
+        <h1>LOGO</h1>
+        <!-- <img src="logo.png" alt="Logo" /> -->
+      </div>
+      <form class="login-form">
+        <div class="feedback" id="feedback">Preencha seus dados para continuar.</div>
+        <input type="text" id="nome" placeholder="Nome Completo" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="senha" placeholder="Senha" required />
+        <select  name="funcao" id="funcao" required>
+         <option value="Admin">Admin</option>
+         <option value="Aluno">Aluno</option>
+        </select>
+        <button type="button" id="registerButton" onclick="cadastrarUsuarioPage()">Cadastrar</button>
+
+        <a href="login.html" class="register-link">Já tem uma conta? Faça login</a>
+      </form>
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/scripts/controllers.js"></script>
+</body>
+</html>

@@ -34,6 +34,48 @@ await listarUsuarios();
 
 });
 
+async function cadastrarUsuarioPage() {
+  const nome = $('#nome').val();
+  const email = $('#email').val();
+  const senha = $('#senha').val();
+  const funcao = $('#funcao').val();
+
+  const userData = {
+    nome: nome,
+    email: email,
+    funcao: funcao,
+    cursos: [], 
+    senha: senha
+  };
+
+  try {
+    const response = await $.ajax({
+      url: `${urlApi}usuarios/salva`, 
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(userData)
+    });
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Cadastro realizado com sucesso!',
+      text: 'Você será redirecionado para o login.',
+      showConfirmButton: false,
+      timer: 3000
+    }).then(() => {
+      window.location.href = 'login.html';  
+    });
+
+  } catch (error) {
+    
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro ao cadastrar!',
+      text: 'Por favor, tente novamente.',
+      showConfirmButton: true
+    });
+  }
+}
 async function listarUsuarios() {
   var response = await axios.get(`${urlApi}usuarios/lista`);
   response = response.data;
