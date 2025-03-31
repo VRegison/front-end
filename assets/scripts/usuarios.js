@@ -82,13 +82,14 @@ document.getElementById("usuarioForm").addEventListener("submit", async function
    const senha = document.getElementById("senha").value;
 
    try {
-       const response = await axios.post("http://localhost:3000/usuarios", {
+       const response = await axios.post(`${urlApi}/usuarios`, {
            nome: nome,
            email: email,
            senha: senha
        });
        document.getElementById("mensagem").innerHTML = '<div class="alert alert-success">Usuário cadastrado com sucesso!</div>';
        this.reset(); // Limpar os campos após o cadastro
+       window.location.href = 'login.html'
    } catch (error) {
        document.getElementById("mensagem").innerHTML = '<div class="alert alert-danger">Erro ao cadastrar usuário.</div>';
    }

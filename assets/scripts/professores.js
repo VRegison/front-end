@@ -1,4 +1,8 @@
 
+$(document).ready(function() {
+    $('#tabelaProfessores').DataTable();
+    carregarProfessores();
+});
 async function carregarProfessores() {
     try {
         const response = await axios.get(`${urlApi}professores`);
@@ -70,7 +74,4 @@ async function criarProfessor() {
 
 
 
-$(document).ready(function() {
-    $('#tabelaProfessores').DataTable();
-    carregarProfessores();
-});
+

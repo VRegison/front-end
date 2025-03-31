@@ -38,6 +38,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../services/api.js"></script>
     <script>
         document.getElementById("professorForm").addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -45,7 +46,7 @@
             const especialidade = document.getElementById("especialidade").value;
 
             try {
-                const response = await axios.post("http://localhost:3000/professores", {
+                const response = await axios.post(`${urlApi}professores`, {
                     nome: nome,
                     especialidade: especialidade
                 });
