@@ -6,46 +6,46 @@
   <title>Dashboard de Controle de Usuários</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../assets/style/dash.css">
+  <link rel="icon" href="./assets/images/tecnologia.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/style/landingPage.css">
 </head>
 <body>
   <!-- Barra de navegação -->
   <nav class="nav-bar">
     <div class="logo">LOGO</div>
-    <div class="system-name">Sistema de Controle</div>
-  </nav>
+    <ul class="nav-links">
+        <li><a href="./dashboard.html">Cursos</a></li>
+        <li><a href="./professor.html">Professores</a></li>
+        <li><a href="./usuarios.html">Usuários</a></li>
+        <li><a href="./categoria.html">Categorias</a></li>
+    </ul>
+    <button class="menu-toggle">☰</button>
+</nav>
 
-  <div class="dashboard-container">
-    <header class="dashboard-header">
-      <h1>Controle de Usuários</h1>
-      <button onclick="cadastrarUsuario()" type="button" id="createUserButton">Criar Usuário</button>
-    </header>
-    <main class="dashboard-main">
-      <table id="userTable" class="display">
-        <thead>
-          <tr>
-            <th  width="5%">#</th>
-            <th  width="25%">Nome</th>
-            <th  width="20%">Email</th>
-            <th  width="10%">Curso</th>
-            <th  width="5%">Função</th>
-            <th  width="2%"></th>
-            <th  width="2%"></th>
 
-          </tr>
-        </thead>
-        <tbody id="linhas">
-        </tbody>
-      </table>
-    </main>
 
-  
+<div  style="padding: 10px;">
+
+      <a class="btn btn-primary" href="./cadastraCurso.html">
+        Cadastrar
+      </a>
   </div>
+    <div class="container text-center">
+      <h2 class="mb-4">Cursos Cadastrados</h2>
+      <div class="courses-row d-flex flex-wrap justify-content-center">
+
+    </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script src="../services/api.js" ></script>
+  <script src="../assets/scripts/cursos.js" ></script>
 
-  <script src="../assets/scripts/controllers.js" defer></script>
 </body>
 </html>

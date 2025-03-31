@@ -81,15 +81,13 @@ async function listarUsuarios() {
   response = response.data;
   console.log("🚀 ~ response:", response);
 
-  const tableBody = $('#linhas'); // Obtendo o corpo da tabela
+  const tableBody = $('#linhas'); 
 
-  // Limpar o corpo da tabela antes de adicionar as novas linhas
   tableBody.empty();
 
     response.forEach(function(usuario) {
       const row = $('<tr></tr>');
 
-      // Adicionando as células de dados
       row.append('<td id="id_usuario">' + usuario._id + '</td>'); 
       row.append('<td>' + usuario.nome + '</td>'); 
       row.append('<td>' + usuario.email + '</td>'); 
@@ -243,48 +241,3 @@ async function excluirUsuario(usuarioId) {
   }
 }
 
-async function login() {
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const feedback = document.getElementById('feedback');
-    const loginButton = document.getElementById('loginButton');
-  
-    // Validação básica
-    if (!email || !senha) {
-      feedback.textContent = 'Preencha todos os campos!';
-      feedback.style.color = 'red';
-      return;
-    }
-  
-    // Exibe o loader no botão
-    loginButton.disabled = true;
-    loginButton.textContent = 'Entrando...';
-    loginButton.classList.add('button-loading');
-  
-    try {
-      // Simula uma requisição à API
-      const response = await axios.post(`${urlApi}usuarios/login`, { email, senha });
-  
-      // Verifica se a requisição foi bem-sucedida
-      if (response.status === 200) {
-        feedback.textContent = 'Login realizado com sucesso!';
-        feedback.style.color = 'green';
-      
-          setTimeout(() => {
-            window.location.href = '../pages/dashboard.html';
-          }, 2000);
-       
-  
-      }
-    } catch (error) {
-      // Mostra mensagem de erro
-      feedback.textContent = 'Erro ao fazer login. Verifique suas credenciais!';
-      feedback.style.color = 'red';
-    } finally {
-      // Restaura o botão
-      loginButton.disabled = false;
-      loginButton.textContent = 'Entrar';
-      loginButton.classList.remove('button-loading');
-    }
-  }
-  

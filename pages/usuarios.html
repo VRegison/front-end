@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Usuários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/style/dash.css">
+    <link rel="icon" href="./assets/images/tecnologia.png" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/style/landingPage.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="logo">LOGO</div>
+    <ul class="nav-links">
+        <li><a href="./dashboard.html">Cursos</a></li>
+        <li><a href="./professor.html">Professores</a></li>
+        <li><a href="./usuarios.html">Usuários</a></li>
+        <li><a href="./categoria.html">Categorias</a></li>
+    </ul>
+    <button class="menu-toggle">☰</button>
+</nav>
+<div  style="padding: 10px;">
+
+ <a class="btn btn-primary" href="./cadastraUsuario.html">
+   Cadastrar
+ </a>
+ </div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Listagem de Usuários</h2>
+        <table id="usuariosTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="usuariosBody">
+                <!-- Os dados dos usuários serão carregados aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../services/api.js" ></script>
+    <script src="../assets/scripts/usuarios.js" ></script>
+</body>
+</html>
